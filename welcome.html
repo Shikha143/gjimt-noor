@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thank You, Donor | NOOR</title><link rel="stylesheet" href="dashboard.css"><style>.thanks{max-width:800px;margin:35px auto;text-align:center}.thanks h1{color:#b91d38;font-size:clamp(30px,5vw,50px)}.thanks p{font-size:20px;line-height:1.6}.thanks .next{background:#fce8ec;border:2px solid #e9b0bd;padding:23px;border-radius:20px;font-size:24px;font-weight:bold;color:#9c1530}.thanks a{display:inline-block;margin:20px 8px 0;padding:15px 22px;border-radius:14px;background:#b91d38;color:white;text-decoration:none;font-weight:bold}</style></head><body><header><img src="gjimt_logo.jpg" alt="GJIMT"><div><small>GJIMT BLOOD DONATION CAMP</small><h1>NOOR • Thank You</h1></div></header><main class="thanks"><div class="noor"><div class="halo" id="halo"><img src="noor_ai.png" alt="NOOR"></div><h1>Thank you!</h1><div class="next">Please proceed to the Basement for the next step.</div><button type="button" id="enableWelcomeVoice" style="display:block;margin:16px auto;padding:16px 24px;background:#b91d38;color:white;border:0;border-radius:12px;font-size:20px">🔊 Tap to Hear NOOR</button><div id="voiceStatus" style="font-size:12px;color:#65738b"></div><br><a href="index.html">Register Next Donor →</a></div></main><script src="noor-audio.js"></script><script>
+function noorPronunciation(text){
+ return String(text).replace(/Non\s+Gianjyotian/gi,'Non Gyaan Jyoti an').replace(/Gianjyotian/gi,'Gyaan Jyoti an').replace(/Gian\s+Jyoti/gi,'Gyaan Jyoti').replace(/\bGian\b/gi,'Gyaan').replace(/Sat Shri Akal/gi,'Sat Shree Akaal').replace(/Sat Sri Akal/gi,'Sat Shree Akaal');
+}
+
+function noorFemaleVoice(){
+ const vs=speechSynthesis.getVoices()||[];
+ const preferred=['Microsoft Neerja','Microsoft Heera','Google हिन्दी','Google Hindi','Microsoft Swara','Veena','Lekha','Google UK English Female','Samantha','Karen','Moira','Tessa','Microsoft Zira'];
+ for(const name of preferred){const v=vs.find(x=>x.name.toLowerCase().includes(name.toLowerCase()));if(v)return v;}
+ return vs.find(v=>/^(hi|en)[-_ ]?IN/i.test(v.lang)&&/female|woman|neerja|heera|swara|veena|lekha/i.test(v.name))||vs.find(v=>/female|woman|neerja|heera|swara|veena|lekha|samantha|karen|zira/i.test(v.name))||vs.find(v=>/^hi[-_]?IN/i.test(v.lang))||vs.find(v=>/^en[-_]?IN/i.test(v.lang))||vs.find(v=>v.default)||vs[0]||null;
+}
+
+let voiceEnabled=false;
+function guestWelcomeActive(){
+ try{const state=JSON.parse(localStorage.getItem('noorGuestAudioOwnerV1')||'null');return !!(state&&Number(state.expires)>Date.now())}catch(e){return false}
+}
+function stopForGuest(){if(guestWelcomeActive()||document.hidden){if('speechSynthesis' in window)speechSynthesis.cancel();document.getElementById('halo').classList.remove('talking')}}
+window.addEventListener('storage',e=>{if(e.key==='noorGuestAudioOwnerV1')stopForGuest()});
+document.addEventListener('visibilitychange',stopForGuest);
+setInterval(stopForGuest,1500);
+function speakReception(){
+ if(guestWelcomeActive()||document.hidden)return;
+ const status=document.getElementById('voiceStatus');
+ window.NOORAudio.say('Thank you. Please proceed to the Basement for the next step.',{
+   start:()=>{document.getElementById('halo').classList.add('talking');status.textContent='NOOR is speaking'},
+   end:()=>{document.getElementById('halo').classList.remove('talking');status.textContent='Thank you'},
+   error:e=>{document.getElementById('halo').classList.remove('talking');status.textContent='Voice unavailable: '+e+' — tap again'}
+ });
+}
+document.getElementById('enableWelcomeVoice').addEventListener('click',speakReception);
+if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=()=>{if(!voiceEnabled){voiceEnabled=true;speakReception()}}}
+window.addEventListener('load',()=>setTimeout(()=>{voiceEnabled=true;speakReception()},350));
+
+</script></body></html>

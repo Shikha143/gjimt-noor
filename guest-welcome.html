@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NOOR | Welcome Guests</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="guest-welcome.css">
+</head>
+<body>
+
+  <header class="event-header">
+    <div class="event-branding" aria-label="Blood donation camp organizer and partner logos">
+      <img class="brand-gjimt" src="gjimt_logo.jpg" alt="Gian Jyoti Institute of Management and Technology">
+      <div class="brand-other-logos">
+        <img src="pgimer_logo.png" alt="PGIMER Chandigarh">
+        <img src="red_ribbon_logo.png" alt="Red Ribbon Club">
+        <img src="nss_logo.png" alt="National Service Scheme">
+        <img src="ncc_logo.png" alt="National Cadet Corps">
+        <img class="brand-rotaract" src="rotaract_logo.png" alt="Rotaract">
+      </div>
+    </div>
+    <div class="event-header-main">
+      <div class="header-title">
+        <small>GJIMT • 15 OCTOBER 2026</small>
+        <h1>Blood Donation • Welcome Guests</h1>
+        <p>Every drop carries hope.</p>
+      </div>
+      <nav class="header-actions" aria-label="Page navigation">
+        <a href="dashboard.html" class="registration-btn">← Live Dashboard</a>
+        <a href="index.html" class="guest-welcome-button">← Registration</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section class="intro" aria-labelledby="guestHeading">
+        <div class="guest-top-row"><span class="live">♥ A HEARTFELT WELCOME</span><div class="guest-association"><img src="association.png" alt="In association with PGIMER and Red Ribbon Club"></div></div>
+        <div class="guest-welcome-heading"><div class="welcome-kicker">WITH WARM REGARDS</div><h2 id="guestHeading">Welcome Our Distinguished Guests</h2><p>Gian Jyoti Institute of Management and Technology is delighted to welcome our honoured guests.</p></div>
+        <div class="guest-slider" aria-live="polite">
+          <article class="guest-slide active" aria-hidden="false"><div class="guest-photo-frame"><img src="guest1.png" alt="Guest 1 photograph" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="guest-photo-placeholder" style="display:none"><strong>GUEST 1 PHOTO</strong><small>Upload guest1.jpg</small></div></div><div class="guest-details"><div class="guest-label">OUR DISTINGUISHED GUEST</div><h3>Captain Mantej Singh Cheema</h3><div class="guest-divider"></div><p class="designation">Assistant Director of Youth Services</p><p class="organization"></p><p class="welcome-note">Thank you for gracing our Blood Donation Camp with your presence.</p></div></article>
+          <article class="guest-slide" aria-hidden="true"><div class="guest-photo-frame"><img src="guest2.jpg" alt="Guest 2 photograph" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="guest-photo-placeholder" style="display:none"><strong>GUEST 2 PHOTO</strong><small>Upload guest2.jpg</small></div></div><div class="guest-details"><div class="guest-label">OUR DISTINGUISHED GUEST</div><h3>J.S. Bedi</h3><div class="guest-divider"></div><p class="designation">Chairman</p><p class="organization">Gian Jyoti Institute of Management and Technology </p><p class="welcome-note">Your support inspires our mission of giving blood and saving lives.</p></div></article>
+          <article class="guest-slide" aria-hidden="true"><div class="guest-photo-frame"><img src="guest3.jpeg" alt="Dr. Aneet Bedi photograph" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="guest-photo-placeholder" style="display:none"><strong>GUEST 3 PHOTO</strong><small>Upload guest3.jpg</small></div></div><div class="guest-details"><div class="guest-label">OUR DISTINGUISHED GUEST</div><h3>Dr. Aneet Bedi</h3><div class="guest-divider"></div><p class="designation">Director</p><p class="organization">Gian Jyoti Institute of Management and Technology</p><p class="welcome-note">We are honoured by your presence and support for this noble cause.</p></div></article>
+        </div>
+        <div class="guest-controls"><button id="prevGuest" type="button" aria-label="Previous guest">‹</button><span id="guestProgress">Guest 1 of 3</span><button id="nextGuest" type="button" aria-label="Next guest">›</button></div>
+        <div class="guest-footer">♥ &nbsp; Together, we give hope. Together, we save lives.</div>
+      </section>
+
+      <aside class="noor">
+        <div class="halo"><img src="noor_ai.png" alt="NOOR AI Assistant" id="avatar"></div>
+        <h2>GJIMT NOOR</h2>
+        <div class="donor-alert" id="guestAlert">♥ Welcoming our honoured guests ♥</div>
+        <p id="line">Sat Sri Akal! Welcome to the Gian Jyoti Blood Donation Camp.</p><div class="noor-audio-controls"><button type="button" id="repeatWelcome">🔊 Repeat / Resume NOOR</button><button type="button" id="stopNoor">■ Stop NOOR</button></div>
+      </aside>
+    </div>
+    <div class="quote">♥ &nbsp; Give blood. Share life. Become someone's reason to smile.</div>
+  </main>
+<script src="noor-audio.js"></script>
+  <script src="guest-welcome.js"></script>
+</body>
+</html>

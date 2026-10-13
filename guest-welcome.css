@@ -1,0 +1,82 @@
+/* NOOR Welcome Guests: coordinated with the Live Dashboard */
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top left,#fff1f3,#f4f6ff 55%,#e8edf7);font-family:Arial,sans-serif;color:#202b42}
+.event-header{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,1.12fr) auto;align-items:center;column-gap:12px;row-gap:4px;padding:8px 2%;min-height:76px;background:linear-gradient(145deg,#fff,#fff8fa);box-shadow:0 3px 12px #60192a16}
+.event-branding{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:flex-start;gap:6px;min-width:0;width:100%}
+.event-branding img{display:block;object-fit:contain;min-width:0}
+.event-branding .brand-gjimt{flex:0 1 43%;width:43%;max-width:43%;height:53px}
+.brand-other-logos{display:flex;flex:1 1 57%;min-width:0;justify-content:flex-start;align-items:center;gap:4px}
+.brand-other-logos img{flex:1 1 0;min-width:0;max-width:19%;height:45px;width:auto;filter:drop-shadow(0 1px 1px #50121c18)}
+.brand-other-logos img.brand-rotaract{max-width:23%;flex:1.2 1 0}
+.event-header-main{display:contents}
+.header-title{grid-column:2;grid-row:1;text-align:center;min-width:0}
+.header-title small{letter-spacing:2px;font-weight:bold;color:#a62138;font-size:12px}
+.header-title h1{font-size:clamp(19px,2.05vw,29px);line-height:1.15;margin:3px 0;color:#ac1430}
+.header-title p{font-size:12px;color:#63718b;margin:3px 0 0}
+.header-actions{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:max-content}
+.header-actions a{display:inline-flex;align-items:center;justify-content:center;margin:0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-size:12px;font-weight:700;line-height:1.25;white-space:nowrap}
+.registration-btn{background:#b8193b}.guest-welcome-button{background:linear-gradient(135deg,#c51d42,#e23d60);box-shadow:0 3px 9px rgba(155,24,54,.22)}
+.header-actions a:hover{filter:brightness(1.08)}
+main{max-width:1450px;margin:auto;padding:36px 4%}
+.grid{display:grid;grid-template-columns:1.7fr .85fr;gap:28px;align-items:stretch}
+.intro,.noor{border:1px solid #ffffffcc;background:linear-gradient(135deg,#ffffffed,#fff8fae8);box-shadow:14px 20px 40px #5b25411b,-6px -6px 20px #fff;border-radius:32px;padding:32px;min-width:0}
+.guest-top-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.live{display:inline-block;border-radius:30px;background:#e8faef;color:#078151;padding:9px 14px;font-size:12px;font-weight:bold;letter-spacing:1px}
+.honour-tag{font-size:11px;font-weight:900;letter-spacing:1.3px;color:#ae1c3d}
+.guest-welcome-heading{text-align:center;margin:25px auto 22px}
+.welcome-kicker{color:#bd2345;font-size:11px;font-weight:900;letter-spacing:3px}
+.guest-welcome-heading h2{font-size:clamp(28px,3.3vw,45px);color:#202b42;margin:9px 0}
+.guest-welcome-heading p{color:#66748a;line-height:1.6;margin:0 auto;max-width:650px;font-size:14px}
+.guest-profile{display:grid;grid-template-columns:minmax(180px,.82fr) minmax(0,1fr);gap:28px;align-items:center;padding:25px;border:1px solid #f2d7df;border-radius:26px;background:linear-gradient(140deg,#fff,#fff0f3);box-shadow:0 15px 35px #a62a4a14}
+.guest-photo-frame{width:100%;max-width:300px;aspect-ratio:4/5;margin:auto;padding:8px;background:linear-gradient(135deg,#ff8092,#b31837,#f7cbd2);border-radius:25px;box-shadow:10px 14px 24px #7b1b3d2b;overflow:hidden}
+.guest-photo-frame img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top;border-radius:18px;background:#fff}
+.guest-photo-placeholder{height:100%;width:100%;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;color:#ac1430;border-radius:18px;background:linear-gradient(145deg,#fff,#ffe3ea)}
+.guest-photo-placeholder span{font-size:62px}.guest-photo-placeholder strong{font-size:19px;letter-spacing:1px}.guest-photo-placeholder small{font-size:12px;color:#8a5260}
+.guest-details{min-width:0;text-align:left}.guest-label{color:#b51d40;font-size:11px;font-weight:900;letter-spacing:2px}
+.guest-details h3{font-size:clamp(28px,3.2vw,45px);color:#aa1738;line-height:1.13;margin:13px 0;overflow-wrap:anywhere}
+.guest-divider{width:76px;height:4px;background:linear-gradient(90deg,#b8193b,#ff8a9d);border-radius:10px;margin:18px 0}
+.designation{font-size:clamp(16px,1.8vw,22px);font-weight:800;color:#202b42;margin:0 0 9px}
+.organization{font-size:clamp(14px,1.4vw,18px);font-weight:600;color:#66748a;margin:0}
+.welcome-note{font-size:14px;line-height:1.7;color:#7c5360;margin:24px 0 0}
+.guest-footer{text-align:center;color:#a51b3b;font-size:16px;font-weight:800;margin:24px 0 0}
+.noor{text-align:center}.halo{width:min(300px,100%);aspect-ratio:1;margin:5px auto 20px;padding:9px;background:linear-gradient(135deg,#ff8092,#b31837,#f7cbd2);border-radius:34px;box-shadow:12px 16px 22px #7b1b3d35;transform:perspective(700px) rotateY(-5deg)}
+.halo img{width:100%;height:100%;object-fit:cover;border-radius:26px}.noor h2{color:#b91d38}.noor p{line-height:1.6}
+.donor-alert{margin:15px 0;padding:15px;background:linear-gradient(130deg,#fff1df,#ffe2e8);border:1px solid #edc4cb;border-radius:17px;font-weight:800;color:#9e1833;box-shadow:5px 7px 14px #a3293b18}
+.quote{margin:30px 0;text-align:center;font-size:clamp(18px,2vw,27px);font-weight:bold;color:#9d1d37}
+@media(max-width:1100px){.grid{grid-template-columns:1fr}.noor{max-width:600px;width:100%;margin:auto}}
+@media(max-width:1000px){.event-header{grid-template-columns:minmax(0,1fr) minmax(230px,1.1fr) auto;column-gap:7px}.event-branding .brand-gjimt{height:44px}.brand-other-logos img{height:36px}.header-title h1{font-size:19px}.header-actions{gap:5px}.header-actions a{font-size:10px;padding:8px 9px}}
+@media(max-width:730px){.event-header{grid-template-columns:1fr auto;gap:6px;padding:8px}.event-branding{grid-column:1/-1;grid-row:1;justify-content:center}.event-branding .brand-gjimt{height:49px}.brand-other-logos img{height:39px}.header-title{grid-column:1;grid-row:2;text-align:left}.header-actions{grid-column:2;grid-row:2;flex-wrap:wrap;min-width:0}.guest-profile{grid-template-columns:1fr;gap:18px}.guest-details{text-align:center}.guest-divider{margin:18px auto}}
+@media(max-width:430px){.event-header{grid-template-columns:1fr}.header-title{grid-column:1;grid-row:2;text-align:center}.header-title h1{font-size:17px}.header-title p{font-size:10px}.header-actions{grid-column:1;grid-row:3;justify-content:center}.intro,.noor{padding:20px}.guest-profile{padding:16px}.guest-photo-frame{max-width:260px}.guest-top-row{justify-content:center}.guest-welcome-heading{margin-top:18px}}
+
+/* Two-guest slider, retains original dashboard branding and NOOR layout */
+header.event-header .event-header-main>.header-title{grid-column:2!important;grid-row:1!important;text-align:center!important}
+header.event-header .event-header-main>.header-actions{grid-column:3!important;grid-row:1!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:8px!important;min-width:max-content!important}
+header.event-header .event-header-main .header-actions>a{margin:0!important;padding:9px 12px!important;font-size:12px!important;color:white!important;border-radius:10px!important;text-decoration:none!important;white-space:nowrap!important}
+.guest-top-row{display:flex;justify-content:space-between;align-items:center;gap:15px;min-height:90px}
+.guest-association{flex:0 1 450px;width:min(450px,65%);min-width:0}
+.guest-association img{width:100%;height:auto;max-height:135px;object-fit:contain;object-position:right center}
+.guest-slider{position:relative;min-height:380px;overflow:hidden;border-radius:25px;background:linear-gradient(135deg,#fff5f7,#fff,#fef0e8);border:1px solid #f3d4dc;box-shadow:0 14px 34px #8d39501a}
+.guest-slide{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:20px;align-items:center;padding:22px;opacity:0;transform:translateX(28px);pointer-events:none;transition:opacity .7s ease,transform .7s ease}
+.guest-slide.active{opacity:1;transform:translateX(0);pointer-events:auto;z-index:1}
+.guest-slide .guest-photo-frame{height:320px;min-width:0}
+.guest-slide .guest-photo-frame img{object-fit:contain;background:#fff}
+.guest-slide .guest-details h3{font-size:clamp(25px,2.7vw,40px)}
+.guest-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin:14px auto 0;color:#a41a39;font-size:13px;font-weight:800}
+.guest-controls button{border:0;border-radius:50%;background:#b91d38;color:#fff;font-size:25px;width:36px;height:36px;cursor:pointer}
+#repeatWelcome{margin-top:10px}
+@media(max-width:730px){header.event-header .event-header-main>.header-title{grid-column:1!important;grid-row:2!important;text-align:left!important}header.event-header .event-header-main>.header-actions{grid-column:2!important;grid-row:2!important;min-width:0!important;flex-wrap:wrap!important}.guest-slide{padding:14px;gap:12px}.guest-slide .guest-photo-frame{height:260px}}
+@media(max-width:650px){.guest-top-row{flex-wrap:wrap}.guest-association{flex:1 1 100%;width:100%;max-width:100%}.guest-association img{max-height:110px;object-position:center}.guest-slider{min-height:610px}.guest-slide{grid-template-columns:1fr;grid-template-rows:250px 1fr}.guest-slide .guest-photo-frame{height:250px;max-width:300px;width:100%;margin:auto}}
+@media(max-width:430px){header.event-header .event-header-main>.header-title{grid-column:1!important;grid-row:2!important;text-align:center!important}header.event-header .event-header-main>.header-actions{grid-column:1!important;grid-row:3!important;justify-self:center!important}}
+
+/* Separate manual stop control for NOOR audio; guest slides continue */
+.noor-audio-controls{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}
+.noor .noor-audio-controls button{margin:0!important;border:0;border-radius:12px;padding:12px 14px;font-size:13px;font-weight:800;cursor:pointer}
+.noor .noor-audio-controls #stopNoor{background:#343b4a;color:#fff;box-shadow:0 5px 12px #202b4226}
+.noor .noor-audio-controls #stopNoor:hover{background:#161c29}
+
+/* Compact welcome heading: avoid excessive vertical whitespace */
+.guest-welcome-heading{margin:10px auto 12px!important}
+.guest-welcome-heading .welcome-kicker{font-size:10px!important;letter-spacing:2px!important}
+.guest-welcome-heading h2{font-size:clamp(21px,2.1vw,29px)!important;line-height:1.22!important;margin:5px auto 6px!important;max-width:680px!important}
+.guest-welcome-heading p{font-size:12px!important;line-height:1.45!important}
+@media(max-width:650px){.guest-welcome-heading h2{font-size:22px!important}}
